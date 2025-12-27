@@ -51,8 +51,8 @@
 
 .project-tag {
     padding: var(--spacing-xs) var(--spacing-md);
-    background: rgba(236, 72, 153, 0.1);
-    border: 1px solid rgba(236, 72, 153, 0.3);
+    background: rgba(212, 53, 28, 0.1);
+    border: 1px solid rgba(212, 53, 28, 0.3);
     border-radius: var(--radius-full);
     color: var(--color-accent-light);
     font-size: var(--font-size-xs);

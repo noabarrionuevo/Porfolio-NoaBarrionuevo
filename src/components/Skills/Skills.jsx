@@ -3,16 +3,20 @@ import './Skills.css';
 function Skills() {
     const skillCategories = [
         {
-            title: 'Frontend',
-            skills: ['React', 'JavaScript', 'HTML5', 'CSS3', 'TypeScript', 'Tailwind CSS']
+            title: 'Frontend Development',
+            skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Responsive Design', 'User-centered Interfaces']
         },
         {
-            title: 'Tools & Others',
-            skills: ['Git', 'Vite', 'npm', 'Responsive Design', 'REST APIs', 'Figma']
+            title: 'Design & Tools',
+            skills: ['Figma', 'Prototyping', 'UI/UX Design', 'Visual Design', 'Wireframing']
+        },
+        {
+            title: 'Version Control & Others',
+            skills: ['Git', 'GitHub', 'npm', 'Vite', 'Team Collaboration']
         },
         {
             title: 'Currently Learning',
-            skills: ['Next.js', 'Node.js', 'Three.js', 'GraphQL']
+            skills: ['TypeScript', 'Next.js', 'Node.js', 'Full Stack Development']
         }
     ];
 

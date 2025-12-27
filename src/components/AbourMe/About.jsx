@@ -9,25 +9,21 @@ function About() {
                 <div className="about-content">
                     <div className="about-card glass animate-fadeInUp">
                         <div className="about-text">
-                            <h3>Building Digital Experiences</h3>
+                            <h3>Dev. Front-End Junior | UX/UI Designer</h3>
                             <p>
-                                I'm a passionate front-end developer with a keen eye for design and a love for creating
-                                seamless user experiences. With expertise in React, JavaScript, and modern web technologies,
-                                I transform ideas into beautiful, functional applications.
+                                I am noa barrionuevo a developer front-end junior and a UX/UI designer from argentina.At the moment I am learning all the necessary skills to become a full stack developer. I am passionate about creating user-friendly and visually appealing interfaces.
                             </p>
                             <p>
-                                My approach combines technical excellence with creative problem-solving. I believe in
-                                writing clean, maintainable code while never compromising on aesthetics and user experience.
+                                I am always looking for new challenges and opportunities to grow as a developer. I am also a team player and enjoy working with others to create innovative and engaging user experiences. I am a believer in the power of collaboration and the importance of continuous learning from others.
                             </p>
                             <p>
-                                When I'm not coding, you'll find me exploring new web technologies, contributing to
-                                open-source projects, or staying up-to-date with the latest design trends.
+                                When I'm not coding, you'll find me exploring the importance of the impact of my work on people's lives. I am passionate about creating user-friendly and visually appealing interfaces.
                             </p>
                         </div>
 
                         <div className="about-stats">
                             <div className="stat-item">
-                                <div className="stat-number gradient-text">2+</div>
+                                <div className="stat-number gradient-text">2</div>
                                 <div className="stat-label">Years Experience</div>
                             </div>
                             <div className="stat-item">

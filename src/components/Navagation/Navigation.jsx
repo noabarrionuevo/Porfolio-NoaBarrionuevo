@@ -11,10 +11,7 @@ function Navigation() {
   return (
     <nav className="navigation glass">
       <div className="nav-container">
-        <div className="nav-logo">
-          <span className="gradient-text">NB</span>
-        </div>
-        
+        <span className="nav-bracket">&lt;</span>
         <ul className="nav-menu">
           <li><a onClick={() => scrollToSection('home')}>Home</a></li>
           <li><a onClick={() => scrollToSection('about')}>About</a></li>
@@ -22,6 +19,7 @@ function Navigation() {
           <li><a onClick={() => scrollToSection('projects')}>Projects</a></li>
           <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
         </ul>
+        <span className="nav-bracket">/&gt;</span>
       </div>
     </nav>
   );

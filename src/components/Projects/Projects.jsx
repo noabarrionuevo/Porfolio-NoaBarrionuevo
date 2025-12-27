@@ -3,32 +3,25 @@ import './Projects.css';
 function Projects() {
     const projects = [
         {
-            title: 'E-Commerce Platform',
-            description: 'A modern e-commerce platform built with React, featuring product catalog, shopping cart, and checkout functionality.',
-            tags: ['React', 'CSS3', 'REST API'],
-            demoLink: '#',
-            githubLink: '#'
+            title: 'Hostinger Platform',
+            description: 'Hostinger platform built with HTML5 and CSS3. Responsive design  ',
+            tags: ['CSS3', 'HTML5', 'Responsive Design', 'Spanish'],
+            demoLink: 'https://noabarrionuevo.github.io/UTN-Primer-TP-Hostinger/',
+            githubLink: 'https://github.com/noabarrionuevo/UTN-Primer-TP-Hostinger'
         },
         {
-            title: 'Weather Dashboard',
-            description: 'Real-time weather application with location search, 5-day forecast, and beautiful data visualizations.',
-            tags: ['React', 'API Integration', 'Responsive'],
-            demoLink: '#',
-            githubLink: '#'
-        },
-        {
-            title: 'Task Management App',
-            description: 'Productivity app with drag-and-drop functionality, task categorization, and local storage persistence.',
-            tags: ['React', 'JavaScript', 'LocalStorage'],
-            demoLink: '#',
-            githubLink: '#'
+            title: 'Whatsapp Clone App',
+            description: 'Whatsapp clone app built with React, CSS3, HTML5 and Responsive Design. This was for a final project at UTN so its not a full clone.',
+            tags: ['React', 'CSS3', 'HTML5', 'Responsive Design', 'Spanish'],
+            demoLink: 'https://final-project-utn.vercel.app',
+            githubLink: 'https://github.com/noabarrionuevo/UTN-Primer-TP-Hostinger'
         }
     ];
 
     return (
         <section id="projects" className="section projects">
             <div className="container">
-                <h2 className="section-title">Featured Projects</h2>
+                <h2 className="section-title">Projects <span className="section-subtitle">(Personal)</span></h2>
 
                 <div className="projects-grid">
                     {projects.map((project, index) => (

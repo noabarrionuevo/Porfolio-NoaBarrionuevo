@@ -26,10 +26,9 @@ function Hero() {
                     <h1 className="hero-title">
                         Hi, I'm <span className="gradient-text">Noa Barrionuevo</span>
                     </h1>
-                    <h2 className="hero-subtitle">Front-End Developer</h2>
+                    <h2 className="hero-subtitle">Take people’s difficulties as signifiers of where the product can be improved.</h2>
                     <p className="hero-description">
-                        I craft beautiful, responsive web experiences with React and modern JavaScript.
-                        Passionate about clean code, stunning UI, and seamless user experiences.
+                        The Design of Everyday Things - Donald A. Norman
                     </p>
 
                     <div className="hero-buttons">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 function Contact() {
@@ -8,6 +9,9 @@ function Contact() {
         message: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -15,12 +19,62 @@ function Contact() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add your form submission logic here
-        console.log('Form submitted:', formData);
-        alert('Thank you for your message! I will get back to you soon.');
-        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(true);
+        setSubmitStatus({ type: '', message: '' });
+
+        try {
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+
+            if (!serviceId || !templateId || !publicKey) {
+                throw new Error('EmailJS credentials not configured. Please check your .env file.');
+            }
+
+
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                message: formData.message,
+                to_name: 'Noa', // Tu nombre
+            };
+
+            await emailjs.send(
+                serviceId,
+                templateId,
+                templateParams,
+                publicKey
+            );
+
+            setSubmitStatus({
+                type: 'success',
+                message: '¡Mensaje enviado con éxito! Te responderé pronto.'
+            });
+            setFormData({ name: '', email: '', message: '' });
+
+        } catch (error) {
+            console.error('Error sending email:', error);
+
+            let errorMessage = 'Hubo un error al enviar el mensaje. ';
+
+            if (error.message.includes('credentials not configured')) {
+                errorMessage += 'Por favor, configura las credenciales de EmailJS en el archivo .env';
+            } else if (error.text) {
+                errorMessage += error.text;
+            } else {
+                errorMessage += 'Por favor, intenta nuevamente o contáctame directamente por email.';
+            }
+
+            setSubmitStatus({
+                type: 'error',
+                message: errorMessage
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -38,32 +92,29 @@ function Contact() {
 
                         <div className="contact-details">
                             <div className="contact-item">
-                                <span className="contact-icon">📧</span>
                                 <div>
                                     <h4>Email</h4>
-                                    <a href="mailto:noa@example.com">noa@example.com</a>
+                                    <a href="mailto:barrionuevonoa2005@gmail.com">barrionuevonoa2005@gmail.com</a>
                                 </div>
                             </div>
 
                             <div className="contact-item">
-                                <span className="contact-icon">📍</span>
                                 <div>
-                                    <h4>Location</h4>
-                                    <p>Available for remote work</p>
+                                    <h4>Available for remote work</h4>
                                 </div>
                             </div>
                         </div>
 
                         <div className="social-links">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <a href="https://github.com/noabarrionuevo" target="_blank" rel="noopener noreferrer" className="social-link">
                                 GitHub
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <a href="https://linkedin.com/in/noa-barrionuevo" target="_blank" rel="noopener noreferrer" className="social-link">
                                 LinkedIn
                             </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                            {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
                                 Twitter
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 
@@ -107,8 +158,19 @@ function Contact() {
                             ></textarea>
                         </div>
 
-                        <button type="submit" className="btn btn-primary">
-                            Send Message
+                        {/* Status Messages */}
+                        {submitStatus.message && (
+                            <div className={`form-status ${submitStatus.type}`}>
+                                {submitStatus.message}
+                            </div>
+                        )}
+
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? 'Enviando...' : 'Send Message'}
                         </button>
                     </form>
                 </div>

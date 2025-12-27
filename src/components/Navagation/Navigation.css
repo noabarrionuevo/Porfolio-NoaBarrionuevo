@@ -68,13 +68,20 @@
 
 @media (max-width: 768px) {
     .nav-menu {
-        gap: var(--spacing-md);
-        font-size: var(--font-size-sm);
+        display: none;
+    }
+
+    .nav-container {
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     .nav-menu {
         display: none;
+    }
+
+    .nav-container {
+        justify-content: center;
     }
 }

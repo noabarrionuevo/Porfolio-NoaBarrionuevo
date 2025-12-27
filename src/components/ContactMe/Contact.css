@@ -151,11 +151,13 @@
 
 @media (max-width: 768px) {
     .contact-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: var(--spacing-2xl);
     }
 
     .contact-form {
         padding: var(--spacing-xl);
     }
+
 }

@@ -40,7 +40,7 @@ function About() {
                             </p>
                         </div>
 
-                        <div className="about-stats">
+                        {/* <div className="about-stats">
                             <div className="stat-item">
                                 <div className="stat-number gradient-text">2</div>
                                 <div className="stat-label">
@@ -58,12 +58,12 @@ function About() {
                                 <div className="stat-label">
                                     {t({ en: 'Client Satisfaction', es: 'Satisfacción del Cliente' })}
                                 </div>
-                            </div>
-                        </div>
+                            </div> */}
+                        {/* </div> */}
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 

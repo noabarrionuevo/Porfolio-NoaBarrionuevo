@@ -18,6 +18,7 @@
 
 
 .nav-bracket {
+    font-family: var(--font-family-mono);
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
     background: var(--gradient-primary);

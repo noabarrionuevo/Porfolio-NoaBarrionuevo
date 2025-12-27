@@ -1,31 +1,10 @@
 import { useLanguage } from '../../context/LanguageContext';
+import { useProjects } from '../../context/ProjectsContext';
 import './Projects.css';
 
 function Projects() {
     const { t } = useLanguage();
-
-    const projects = [
-        {
-            title: 'Hostinger Platform',
-            description: {
-                en: 'Hostinger platform built with HTML5 and CSS3. Responsive design',
-                es: 'Plataforma Hostinger construida con HTML5 y CSS3. Diseño responsivo'
-            },
-            tags: ['CSS3', 'HTML5', 'Responsive Design', 'Spanish'],
-            demoLink: 'https://noabarrionuevo.github.io/UTN-Primer-TP-Hostinger/',
-            githubLink: 'https://github.com/noabarrionuevo/UTN-Primer-TP-Hostinger'
-        },
-        {
-            title: 'Whatsapp Clone App',
-            description: {
-                en: 'Whatsapp clone app built with React, CSS3, HTML5 and Responsive Design. This was for a final project at UTN so it\'s not a full clone.',
-                es: 'Aplicación clon de Whatsapp construida con React, CSS3, HTML5 y Diseño Responsivo. Este fue un proyecto final en la UTN, por lo que no es un clon completo.'
-            },
-            tags: ['React', 'CSS3', 'HTML5', 'Responsive Design', 'Spanish'],
-            demoLink: 'https://final-project-utn.vercel.app',
-            githubLink: 'https://github.com/noabarrionuevo/UTN-Primer-TP-Hostinger'
-        }
-    ];
+    const { projects } = useProjects();
 
     return (
         <section id="projects" className="section projects">
@@ -36,7 +15,7 @@ function Projects() {
 
                 <div className="projects-grid">
                     {projects.map((project, index) => (
-                        <div key={index} className="project-card card animate-fadeInUp" style={{ animationDelay: `${index * 0.15}s` }}>
+                        <div key={project.id} className="project-card card animate-fadeInUp" style={{ animationDelay: `${index * 0.15}s` }}>
                             <div className="project-content">
                                 <h3 className="project-title">{project.title}</h3>
                                 <p className="project-description">{t(project.description)}</p>

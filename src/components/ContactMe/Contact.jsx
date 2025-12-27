@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useLanguage } from '../../context/LanguageContext';
+import { useContact } from '../../context/ContactContext';
 import './Contact.css';
 
 function Contact() {
     const { t } = useLanguage();
+    const contactInfo = useContact();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -27,9 +29,9 @@ function Contact() {
         setSubmitStatus({ type: '', message: '' });
 
         try {
-            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+            const serviceId = contactInfo.emailJS.serviceId;
+            const templateId = contactInfo.emailJS.templateId;
+            const publicKey = contactInfo.emailJS.publicKey;
 
 
             if (!serviceId || !templateId || !publicKey) {
@@ -41,7 +43,7 @@ function Contact() {
                 from_name: formData.name,
                 from_email: formData.email,
                 message: formData.message,
-                to_name: 'Noa', // Tu nombre
+                to_name: 'Noa Barrionuevo',
             };
 
             await emailjs.send(
@@ -107,27 +109,23 @@ function Contact() {
                             <div className="contact-item">
                                 <div>
                                     <h4>Email</h4>
-                                    <a href="mailto:barrionuevonoa2005@gmail.com">barrionuevonoa2005@gmail.com</a>
+                                    <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
                                 </div>
                             </div>
 
                             <div className="contact-item">
                                 <div>
-                                    <h4>{t({ en: 'Available for remote work', es: 'Disponible para trabajo remoto' })}</h4>
+                                    <h4>{t(contactInfo.location)}</h4>
                                 </div>
                             </div>
                         </div>
 
                         <div className="social-links">
-                            <a href="https://github.com/noabarrionuevo" target="_blank" rel="noopener noreferrer" className="social-link">
-                                GitHub
-                            </a>
-                            <a href="https://linkedin.com/in/noa-barrionuevo" target="_blank" rel="noopener noreferrer" className="social-link">
-                                LinkedIn
-                            </a>
-                            {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                                Twitter
-                            </a> */}
+                            {contactInfo.socialLinks.map((link, index) => (
+                                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="social-link">
+                                    {link.name}
+                                </a>
+                            ))}
                         </div>
                     </div>
 
@@ -171,7 +169,6 @@ function Contact() {
                             ></textarea>
                         </div>
 
-                        {/* Status Messages */}
                         {submitStatus.message && (
                             <div className={`form-status ${submitStatus.type}`}>
                                 {submitStatus.message}

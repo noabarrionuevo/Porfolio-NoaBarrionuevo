@@ -4,6 +4,7 @@ import About from './components/AbourMe/About';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/ContactMe/Contact';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <p>&copy; 2025 Noa Barrionuevo. All rights reserved.</p>
         </div>
       </footer>
+      <ScrollToTop />
     </div>
   );
 }

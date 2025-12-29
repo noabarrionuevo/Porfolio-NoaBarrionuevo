@@ -22,14 +22,20 @@ function About() {
                             </h3>
                             <p>
                                 {t({
-                                    en: 'I am Noa Barrionuevo, a junior front-end developer and UX/UI designer from Argentina. At the moment I am learning all the necessary skills to become a full stack developer. I am passionate about creating user-friendly and visually appealing interfaces.',
-                                    es: 'Soy Noa Barrionuevo, un desarrollador front-end junior y diseñador UX/UI de Argentina. Actualmente estoy aprendiendo todas las habilidades necesarias para convertirme en desarrollador full stack. Me apasiona crear interfaces amigables y visualmente atractivas.'
+                                    en: 'I specialize in bridging the gap between design and functionality, combining creative aesthetics with technical logic to ensure intuitive interfaces. Currently, I am evolving into a Full Stack Developer, driven by the goal of building simple, high-impact solutions for the end user.',
+                                    es: 'Mi enfoque combina la estética creativa con la lógica técnica para construir experiencias digitales donde el diseño y la funcionalidad convergen, garantizando interfaces intuitivas y soluciones simples para el usuario final. Actualmente, me encuentro aprendiendo las habilidades necesarias para convertirme en Full Stack Developer'
                                 })}
                             </p>
                             <p>
                                 {t({
                                     en: 'I am always looking for new challenges and opportunities to grow as a developer. I am also a team player and enjoy working with others to create innovative and engaging user experiences. I am a believer in the power of collaboration and the importance of continuous learning from others.',
                                     es: 'Siempre estoy buscando nuevos desafíos y oportunidades para crecer como desarrollador. También soy amante de trabajar en equipo y disfruto trabajando con otros para crear experiencias de usuario innovadoras y atractivas. Creo en el poder de la colaboración y la importancia del aprendizaje continuo.'
+                                })}
+                            </p>
+                            <p>
+                                {t({
+                                    en: 'Through my self-managed entrepreneurship, I have developed strong skills in e-commerce management, visual identity, and social media strategy. Additionally, my experience co-organizing large-scale cultural events like “Manokami” has refined my ability to coordinate multidisciplinary teams, manage logistics, and communicate effectively in high-pressure environments. I am eager to contribute my technical toolkit and creative perspective to a professional development team.',
+                                    es: 'A través de mi emprendimiento autogestivo he desarrollado habilidades en gestión de e-commerce, identidad visual y estrategia en redes sociales. Además, mi experiencia co-organizando eventos culturales escala como “La Manokami” ha perfeccionado mi capacidad para coordinar equipos multidisciplinarios, gestionar logística y comunicarme eficazmente en entornos de alta presión.'
                                 })}
                             </p>
                             <p>
@@ -42,24 +48,18 @@ function About() {
 
                         {/* <div className="about-stats">
                             <div className="stat-item">
-                                <div className="stat-number gradient-text">2</div>
+                                <div className="stat-number gradient-text">ES</div>
                                 <div className="stat-label">
-                                    {t({ en: 'Years Experience', es: 'Años de Experiencia' })}
+                                    {t({ en: 'Resume', es: 'Curriculum' })}
                                 </div>
                             </div>
                             <div className="stat-item">
-                                <div className="stat-number gradient-text">15+</div>
+                                <div className="stat-number gradient-text">EN</div>
                                 <div className="stat-label">
-                                    {t({ en: 'Projects Completed', es: 'Proyectos Completados' })}
+                                    {t({ en: 'Resume', es: 'Curriculum' })}
                                 </div>
                             </div>
-                            <div className="stat-item">
-                                <div className="stat-number gradient-text">100%</div>
-                                <div className="stat-label">
-                                    {t({ en: 'Client Satisfaction', es: 'Satisfacción del Cliente' })}
-                                </div>
-                            </div> */}
-                        {/* </div> */}
+                        </div> */}
                     </div>
                 </div>
             </div>

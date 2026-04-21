@@ -20,7 +20,7 @@ function Education() {
             institution: "UTN - Universidad Tecnológica Nacional",
             degree: {
                 en: "Front End Developer & Diploma in Web UX/UI Development | 2025",
-                es: "Desarrolladora Front End y Diplomatura en Desarrollo Web UX/UI | 2025"
+                es: "Desarrollador Front End y Diplomatura en Desarrollo Web UX/UI | 2025"
             }
         },
         {

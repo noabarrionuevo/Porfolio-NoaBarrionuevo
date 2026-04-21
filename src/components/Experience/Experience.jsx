@@ -25,7 +25,7 @@ function Experience() {
         {
             title: {
                 en: "Founder & Lead Designer | [fuegotiene]",
-                es: "Fundadora y Diseñadora Principal | [fuegotiene]"
+                es: "Fundador y Diseñador Principal | [fuegotiene]"
             },
             period: "2022 - Present",
             description: {
@@ -44,7 +44,7 @@ function Experience() {
         {
             title: {
                 en: "Co-Organizer | Cultural Event \"Manokami\"",
-                es: "Co-Organizadora | Evento Cultural \"Manokami\""
+                es: "Co-Organizador | Evento Cultural \"Manokami\""
             },
             period: "2025 - Present",
             description: {

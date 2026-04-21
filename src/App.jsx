@@ -2,6 +2,8 @@ import Navigation from './components/Navagation/Navigation';
 import Hero from './components/Hero/Hero';
 import About from './components/AbourMe/About';
 import Skills from './components/Skills/Skills';
+import Experience from './components/Experience/Experience';
+import Education from './components/Education/Education';
 import Projects from './components/Projects/Projects';
 import Contact from './components/ContactMe/Contact';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
@@ -15,12 +17,14 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Experience />
+        <Education />
         <Projects />
         <Contact />
       </main>
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2025 Noa Barrionuevo. All rights reserved.</p>
+          <p>&copy; 2026 Noa Barrionuevo. All rights reserved.</p>
         </div>
       </footer>
       <ScrollToTop />

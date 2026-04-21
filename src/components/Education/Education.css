@@ -1,0 +1,46 @@
+.education {
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-4xl) 0;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
+  max-width: 800px;
+}
+
+.education-item {
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--spacing-xl);
+}
+
+.institution-name {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.degree-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: 0;
+}
+
+.faculty-name {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+  .education-item {
+    border-left: none;
+    border-bottom: 2px solid var(--color-primary);
+    padding-left: 0;
+    padding-bottom: var(--spacing-md);
+    text-align: center;
+  }
+}

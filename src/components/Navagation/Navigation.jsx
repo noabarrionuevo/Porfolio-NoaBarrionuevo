@@ -26,6 +26,8 @@ function Navigation() {
           <li><a onClick={() => scrollToSection('home')}>{t({ en: 'Home', es: 'Inicio' })}</a></li>
           <li><a onClick={() => scrollToSection('about')}>{t({ en: 'About', es: 'Sobre Mí' })}</a></li>
           <li><a onClick={() => scrollToSection('skills')}>{t({ en: 'Skills', es: 'Habilidades' })}</a></li>
+          <li><a onClick={() => scrollToSection('experience')}>{t({ en: 'Experience', es: 'Experiencia' })}</a></li>
+          <li><a onClick={() => scrollToSection('education')}>{t({ en: 'Education', es: 'Educación' })}</a></li>
           <li><a onClick={() => scrollToSection('projects')}>{t({ en: 'Projects', es: 'Proyectos' })}</a></li>
           <li><a onClick={() => scrollToSection('contact')}>{t({ en: 'Contact', es: 'Contacto' })}</a></li>
         </ul>

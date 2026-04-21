@@ -9,36 +9,42 @@ function Projects() {
     return (
         <section id="projects" className="section projects">
             <div className="container">
-                <h2 className="section-title">
-                    {t({ en: 'Projects', es: 'Proyectos' })} <span className="section-subtitle">({t({ en: 'Personal', es: 'Personales' })})</span>
-                </h2>
+                <div className="section-title-boxed">
+                    <span className="box">p</span>
+                    <span className="box">o</span>
+                    <span className="box">r</span>
+                    <span className="box">t</span>
+                    <span className="box">f</span>
+                    <span className="box">o</span>
+                    <span className="box">l</span>
+                    <span className="box">i</span>
+                    <span className="box">o</span>
+                </div>
 
                 <div className="projects-grid">
                     {projects.map((project, index) => (
-                        <div key={project.id} className="project-card card animate-fadeInUp" style={{ animationDelay: `${index * 0.15}s` }}>
-                            <div className="project-content">
-                                <h3 className="project-title">{project.title}</h3>
-                                <p className="project-description">{t(project.description)}</p>
-
-                                <div className="project-tags">
-                                    {project.tags.map((tag, tagIndex) => (
-                                        <span key={tagIndex} className="project-tag">{tag}</span>
-                                    ))}
+                        <div key={project.id} className="project-card animate-fadeInUp">
+                            {project.image && (
+                                <div className="project-image-box">
+                                    <img src={project.image} alt={project.title} className="project-img" />
                                 </div>
-
+                            )}
+                            <h3 className="project-title">{project.title.toLowerCase()}</h3>
+                            <div className="project-info">
+                                <p className="project-description">{t(project.description)}</p>
                                 <div className="project-links">
-                                    <a href={project.demoLink} className="project-link" target="_blank" rel="noopener noreferrer">
-                                        <span>{t({ en: 'Live Demo', es: 'Demo en Vivo' })}</span>
-                                        <span className="link-arrow">→</span>
-                                    </a>
-                                    <a href={project.githubLink} className="project-link" target="_blank" rel="noopener noreferrer">
-                                        <span>GitHub</span>
-                                        <span className="link-arrow">→</span>
-                                    </a>
+                                    {project.demoLink && (
+                                        <a href={project.demoLink} className="project-link" target="_blank" rel="noopener noreferrer">
+                                            {t({ en: 'demo', es: 'demo' })}
+                                        </a>
+                                    )}
+                                    {project.githubLink && (
+                                        <a href={project.githubLink} className="project-link" target="_blank" rel="noopener noreferrer">
+                                            github
+                                        </a>
+                                    )}
                                 </div>
                             </div>
-
-                            <div className="project-overlay"></div>
                         </div>
                     ))}
                 </div>

@@ -12,21 +12,26 @@ export const useContact = () => {
 
 export const ContactProvider = ({ children }) => {
     const contactInfo = {
-        email: 'barrionuevonoa2005@gmail.com',
+        email: 'noabarrionuevo2005@gmail.com',
         location: {
-            en: 'Available for remote work',
-            es: 'Disponible para trabajo remoto'
+            en: 'Made in Argentina',
+            es: 'Hecho en Argentina'
         },
         socialLinks: [
-            {
-                name: 'GitHub',
-                url: 'https://github.com/noabarrionuevo',
-                icon: '💻'
-            },
             {
                 name: 'LinkedIn',
                 url: 'https://linkedin.com/in/noa-barrionuevo',
                 icon: '💼'
+            },
+            {
+                name: 'Portfolio',
+                url: 'https://porfolio-noa-barrionuevo.vercel.app',
+                icon: '🌐'
+            },
+            {
+                name: 'Instagram',
+                url: 'https://instagram.com/tangivisu',
+                icon: '📸'
             }
         ],
         emailJS: {

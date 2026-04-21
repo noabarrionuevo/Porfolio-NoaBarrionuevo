@@ -6,64 +6,46 @@ function About() {
 
     return (
         <section id="about" className="section about">
-            <div className="container">
-                <h2 className="section-title">
-                    {t({ en: 'About Me', es: 'Sobre Mí' })}
-                </h2>
+            <div className="container about-container">
+                <div className="about-image-decoration animate-fadeIn">
+                    <div className="profile-picture-box">
+                        {/* Placeholder for actual photo */}
+                        <div className="profile-photo"></div>
+                        <div className="badge-name">n o a b a r r i o n u e v o</div>
+                        <div className="badge-origin">made in argentina</div>
+                    </div>
+                    <div className="marker-illustration"></div>
+                </div>
 
-                <div className="about-content">
-                    <div className="about-card glass animate-fadeInUp">
-                        <div className="about-text">
-                            <h3>
-                                {t({
-                                    en: 'Front-End Developer Junior | UX/UI Designer',
-                                    es: 'Desarrollador Front-End Junior | Diseñador UX/UI'
-                                })}
-                            </h3>
-                            <p>
-                                {t({
-                                    en: 'I specialize in bridging the gap between design and functionality, combining creative aesthetics with technical logic to ensure intuitive interfaces. Currently, I am evolving into a Full Stack Developer, driven by the goal of building simple, high-impact solutions for the end user.',
-                                    es: 'Mi enfoque combina la estética creativa con la lógica técnica para construir experiencias digitales donde el diseño y la funcionalidad convergen, garantizando interfaces intuitivas y soluciones simples para el usuario final. Actualmente, me encuentro aprendiendo las habilidades necesarias para convertirme en Full Stack Developer'
-                                })}
-                            </p>
-                            <p>
-                                {t({
-                                    en: 'I am always looking for new challenges and opportunities to grow as a developer. I am also a team player and enjoy working with others to create innovative and engaging user experiences. I am a believer in the power of collaboration and the importance of continuous learning from others.',
-                                    es: 'Siempre estoy buscando nuevos desafíos y oportunidades para crecer como desarrollador. También soy amante de trabajar en equipo y disfruto trabajando con otros para crear experiencias de usuario innovadoras y atractivas. Creo en el poder de la colaboración y la importancia del aprendizaje continuo.'
-                                })}
-                            </p>
-                            <p>
-                                {t({
-                                    en: 'Through my self-managed entrepreneurship, I have developed strong skills in e-commerce management, visual identity, and social media strategy. Additionally, my experience co-organizing large-scale cultural events like “Manokami” has refined my ability to coordinate multidisciplinary teams, manage logistics, and communicate effectively in high-pressure environments. I am eager to contribute my technical toolkit and creative perspective to a professional development team.',
-                                    es: 'A través de mi emprendimiento autogestivo he desarrollado habilidades en gestión de e-commerce, identidad visual y estrategia en redes sociales. Además, mi experiencia co-organizando eventos culturales escala como “La Manokami” ha perfeccionado mi capacidad para coordinar equipos multidisciplinarios, gestionar logística y comunicarme eficazmente en entornos de alta presión.'
-                                })}
-                            </p>
-                            <p>
-                                {t({
-                                    en: 'When I\'m not coding, you\'ll find me exploring the importance of the impact of my work on people\'s lives. I am passionate about creating user-friendly and visually appealing interfaces.',
-                                    es: 'Cuando no estoy programando, me encontrarás explorando la importancia del impacto de mi trabajo en la vida de las personas. Me apasiona crear interfaces amigables y visualmente atractivas.'
-                                })}
-                            </p>
-                        </div>
+                <div className="about-content-box animate-fadeInUp">
+                    <div className="section-title-boxed">
+                        <span className="box">a</span>
+                        <span className="box">b</span>
+                        <span className="box">o</span>
+                        <span className="box">u</span>
+                        <span className="box">t</span>
+                        <span className="box-space"></span>
+                        <span className="box">m</span>
+                        <span className="box">e</span>
+                    </div>
 
-                        {/* <div className="about-stats">
-                            <div className="stat-item">
-                                <div className="stat-number gradient-text">ES</div>
-                                <div className="stat-label">
-                                    {t({ en: 'Resume', es: 'Curriculum' })}
-                                </div>
-                            </div>
-                            <div className="stat-item">
-                                <div className="stat-number gradient-text">EN</div>
-                                <div className="stat-label">
-                                    {t({ en: 'Resume', es: 'Curriculum' })}
-                                </div>
-                            </div>
-                        </div> */}
+                    <div className="about-text-content">
+                        <p>
+                            {t({
+                                en: "I am a Front-End Developer and Web Designer with a solid background in Visual Arts. Currently, I'm deepening my knowledge in Software Applications Development to better bridge the gap between creative aesthetics and technical logic.",
+                                es: "Soy Desarrolladora Front-End y Diseñadora Web con una sólida formación en Artes Visuales. Actualmente, estoy profundizando mis conocimientos en Desarrollo de Aplicaciones de Software para unir mejor la brecha entre la estética creativa y la lógica técnica."
+                            })}
+                        </p>
+                        <p>
+                            {t({
+                                en: "Through my own entrepreneurship, I've gained hands-on experience in e-commerce, visual identity, and strategy. My goal is to build digital solutions that are not only functional but visually meaningful. I'm ready to bring my technical toolkit and creative perspective to a professional team.",
+                                es: "A través de mi propio emprendimiento, he ganado experiencia práctica en comercio electrónico, identidad visual y estrategia. Mi objetivo es construir soluciones digitales que no solo sean funcionales sino también visualmente significativas. Estoy lista para aportar mis herramientas técnicas y perspectiva creativa a un equipo profesional."
+                            })}
+                        </p>
                     </div>
                 </div>
             </div>
-        </section >
+        </section>
     );
 }
 

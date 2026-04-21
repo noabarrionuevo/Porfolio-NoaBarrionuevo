@@ -92,42 +92,42 @@ function Contact() {
 
     return (
         <section id="contact" className="section contact">
-            <div className="container">
-                <h2 className="section-title">{t({ en: 'Get In Touch', es: 'Ponte en Contacto' })}</h2>
+            <div className="container contact-container">
+                <div className="section-title-boxed">
+                    <span className="box">c</span>
+                    <span className="box">o</span>
+                    <span className="box">n</span>
+                    <span className="box">t</span>
+                    <span className="box">a</span>
+                    <span className="box">c</span>
+                    <span className="box">t</span>
+                    <span className="box-space"></span>
+                    <span className="box">i</span>
+                    <span className="box">n</span>
+                    <span className="box">f</span>
+                    <span className="box">o</span>
+                    <span className="box">r</span>
+                    <span className="box">m</span>
+                    <span className="box">a</span>
+                    <span className="box">t</span>
+                    <span className="box">i</span>
+                    <span className="box">o</span>
+                    <span className="box">n</span>
+                </div>
 
-                <div className="contact-content">
-                    <div className="contact-info animate-fadeInUp">
-                        <h3>{t({ en: "Let's Work Together", es: 'Trabajemos Juntos' })}</h3>
-                        <p>
-                            {t({
-                                en: "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
-                                es: 'Siempre estoy interesado en escuchar sobre nuevos proyectos y oportunidades. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!'
-                            })}
-                        </p>
-
-                        <div className="contact-details">
-                            <div className="contact-item">
-                                <div>
-                                    <h4>Email</h4>
-                                    <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-                                </div>
-                            </div>
-
-                            <div className="contact-item">
-                                <div>
-                                    <h4>{t(contactInfo.location)}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="social-links">
-                            {contactInfo.socialLinks.map((link, index) => (
-                                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="social-link">
-                                    {link.name}
-                                </a>
-                            ))}
-                        </div>
+                <div className="contact-info-list animate-fadeInUp">
+                    <div className="contact-detail-item">
+                        <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
                     </div>
+                    {contactInfo.socialLinks.map((link, index) => (
+                        <div key={index} className="contact-detail-item">
+                            <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                {link.url.replace('https://', '').replace('www.', '')}
+                                {link.name === 'Instagram' ? ` (@tangivisu)` : ''}
+                            </a>
+                        </div>
+                    ))}
+                </div>
 
                     <form className="contact-form glass animate-fadeInUp" onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -184,8 +184,7 @@ function Contact() {
                         </button>
                     </form>
                 </div>
-            </div>
-        </section>
+            </section>
     );
 }
 

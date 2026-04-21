@@ -20,47 +20,35 @@ function Hero() {
 
     return (
         <section id="home" className="hero">
-            <div className="hero-background">
-                <div className="hero-gradient"></div>
-            </div>
-
             <div className="hero-content container">
-                <div className="hero-text animate-fadeInUp">
-                    <h1 className="hero-title">
-                        {t({
-                            en: "Hi, I'm ",
-                            es: "Hola, soy "
-                        })}
-                        <span className="gradient-text">Noa Barrionuevo</span>
+                <div className="hero-text animate-fadeIn">
+                    <div className="name-header">
+                        <span className="name-noa">noa</span>
+                        <span className="name-barrionuevo">barrionuevo</span>
+                    </div>
+                    <h1 className="hero-title-boxed">
+                        <span className="box">P</span>
+                        <span className="box">O</span>
+                        <span className="box">R</span>
+                        <span className="box">T</span>
+                        <span className="box">F</span>
+                        <span className="box">O</span>
+                        <span className="box">L</span>
+                        <span className="box">I</span>
+                        <span className="box">O</span>
                     </h1>
-                    <h2 className="hero-subtitle">
-                        {t({
-                            en: "Take people's difficulties as signifiers of where the product can be improved.",
-                            es: "Toma las dificultades de las personas como indicadores de dónde se puede mejorar el producto."
-                        })}
-                    </h2>
-                    <p className="hero-description">
-                        The Design of Everyday Things - Donald A. Norman
-                    </p>
-
-                    <div className="hero-buttons">
-                        <button className="btn btn-primary" onClick={scrollToProjects}>
-                            {t({
-                                en: "View My Work",
-                                es: "Ver Mi Trabajo"
-                            })}
-                        </button>
-                        <button className="btn btn-secondary" onClick={scrollToContact}>
-                            {t({
-                                en: "Get In Touch",
-                                es: "Contactar"
-                            })}
-                        </button>
-                        <button className="language-toggle" onClick={toggleLanguage}>
-                            {language === 'en' ? '🇪🇸 ES' : '🇬🇧 EN'}
-                        </button>
+                    <div className="hero-footer">
+                        <span className="role">designer</span>
+                        <span className="ampersand">&</span>
+                        <span className="role">web</span>
+                        <span className="role">developer</span>
                     </div>
                 </div>
+            </div>
+            <div className="language-toggle-floating">
+                <button className="language-btn" onClick={toggleLanguage}>
+                    {language === 'en' ? 'ES' : 'EN'}
+                </button>
             </div>
         </section>
     );

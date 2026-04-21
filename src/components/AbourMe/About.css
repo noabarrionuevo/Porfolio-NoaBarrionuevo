@@ -1,69 +1,142 @@
 .about {
-    background: var(--color-bg-secondary);
+  background-color: var(--color-bg-primary);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: var(--spacing-4xl) 0;
 }
 
-.about-content {
-    max-width: 900px;
-    margin: 0 auto;
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-4xl);
+  align-items: center;
 }
 
-.about-card {
-    padding: var(--spacing-3xl);
+.about-image-decoration {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xl);
 }
 
-.about-text h3 {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-xl);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.profile-picture-box {
+  width: 300px;
+  height: 350px;
+  background-color: var(--color-primary);
+  border: 4px solid var(--color-primary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: var(--shadow-xl);
+  transform: rotate(-1deg);
 }
 
-.about-text p {
-    font-size: var(--font-size-lg);
-    line-height: 1.8;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
+.profile-photo {
+  flex-grow: 1;
+  background-color: #ddd;
+  background-image: url('https://raw.githubusercontent.com/noabarrionuevo/porfolio-noa-barrionuevo/main/src/assets/profile-placeholder.png');
+  background-size: cover;
+  background-position: center;
 }
 
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-3xl);
-    padding-top: var(--spacing-3xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+.badge-name {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  font-family: var(--font-family-headings);
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  border: 2px solid var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 10;
 }
 
-.stat-item {
-    text-align: center;
+.badge-origin {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  font-family: var(--font-family-headings);
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  border: 2px solid var(--color-primary);
+  text-transform: uppercase;
+  z-index: 10;
 }
 
-.stat-number {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-extrabold);
-    margin-bottom: var(--spacing-sm);
+.marker-illustration {
+  width: 100%;
+  height: 200px;
+  background-image: url('https://raw.githubusercontent.com/noabarrionuevo/porfolio-noa-barrionuevo/main/src/assets/markers.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.stat-label {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.section-title-boxed {
+  display: flex;
+  gap: 5px;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-title-boxed .box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 45px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-family-headings);
+  font-size: 1.5rem;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.box-space {
+  width: 15px;
+}
+
+.about-text-content {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  text-align: right;
+}
+
+.about-text-content p {
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-primary);
 }
 
 @media (max-width: 768px) {
-    .about-card {
-        padding: var(--spacing-xl);
-    }
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
+  .about-text-content {
+    text-align: center;
+  }
 
-    .stat-number {
-        font-size: var(--font-size-3xl);
-    }
+  .section-title-boxed {
+    justify-content: center;
+  }
+
+  .marker-illustration {
+    height: 250px;
+  }
+
+  .profile-picture-box {
+    width: 250px;
+    height: 300px;
+  }
 }

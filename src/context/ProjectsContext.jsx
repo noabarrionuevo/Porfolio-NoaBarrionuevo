@@ -1,6 +1,19 @@
 import { createContext, useContext } from 'react';
 import { useLanguage } from './LanguageContext';
 
+// Import Assets
+import stickerMockup from '../assets/Round Stickers Mockup, Front View.png';
+import brochure from '../assets/folletoGnenro.png';
+import calcomanias from '../assets/calcomaniasGenero.png';
+import posterArtistic1 from '../assets/Posterartistic.png';
+import posterArtistic2 from '../assets/Posterartistic (1).png';
+import posterGenero from '../assets/PosterGenero.png';
+import giftCard4 from '../assets/Gift Cards Mockup Falling (4).png';
+import giftCard5 from '../assets/Gift Cards Mockup Falling (5).png';
+import businessCard1 from '../assets/Business Cards Mockup, Stacked  (1).png';
+import businessCard2 from '../assets/Business Cards Mockup, Stacked  (2).png';
+import businessCardStacked from '../assets/Business Cards Mockup, Stacked .png';
+
 const ProjectsContext = createContext();
 
 export const useProjects = () => {
@@ -50,7 +63,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Diseño de stickers personalizados para branding digital y distribución física.'
             },
             tags: ['Merchandising', 'Branding'],
-            image: 'src/assets/Round Stickers Mockup, Front View.png'
+            image: stickerMockup
         },
         {
             id: 4,
@@ -61,7 +74,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Diseño editorial para la concientización sobre derechos de salud e identidad.'
             },
             tags: ['Editorial', 'Social'],
-            image: 'src/assets/folletoGnenro.png'
+            image: brochure
         },
         {
             id: 5,
@@ -72,7 +85,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Diseño de stickers personalizados para branding digital y distribución física.'
             },
             tags: ['Merchandising', 'Branding'],
-            image: 'src/assets/calcomaniasGenero.png'
+            image: calcomanias
         },
         {
             id: 6,
@@ -83,7 +96,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Una serie de pósters artísticos explorando la composición y la teoría del color.'
             },
             tags: ['Art', 'Poster'],
-            image: 'src/assets/Posterartistic.png'
+            image: posterArtistic1
         },
         {
             id: 7,
@@ -94,7 +107,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Serie gráfica para decoración.'
             },
             tags: ['Art', 'Poster'],
-            image: 'src/assets/Posterartistic (1).png'
+            image: posterArtistic2
         },
         {
             id: 8,
@@ -105,7 +118,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Materiales de información y promoción para campañas de diversidad, género e inclusión.'
             },
             tags: ['Event', 'Culture', 'Identity', 'Social', 'Informational'],
-            image: 'src/assets/PosterGenero.png'
+            image: posterGenero
         },
         {
             id: 9,
@@ -116,7 +129,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Diseños creativos de tarjetas personales con elementos dinámicos.'
             },
             tags: ['Branding', 'Print', 'Design'],
-            image: '/src/assets/Gift Cards Mockup Falling (4).png'
+            image: giftCard4
         },
         {
             id: 10,
@@ -127,7 +140,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Identidad de tarjetas personales.'
             },
             tags: ['Branding', 'Print'],
-            image: '/src/assets/Gift Cards Mockup Falling (5).png'
+            image: giftCard5
         },
         {
             id: 11,
@@ -138,7 +151,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Diseño de stickers personalizados para branding digital y distribución física.'
             },
             tags: ['Merchandising', 'Branding'],
-            image: 'src/assets/calcomaniasGenero.png'
+            image: calcomanias
         },
         {
             id: 12,
@@ -149,7 +162,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Materiales de información y promoción para campañas de diversidad, género e inclusión.'
             },
             tags: ['Event', 'Culture', 'Identity', 'Social', 'Informational'],
-            image: 'src/assets/Business Cards Mockup, Stacked  (1).png'
+            image: businessCard1
         },
         {
             id: 12,
@@ -160,7 +173,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Materiales de información y promoción para campañas de diversidad, género e inclusión.'
             },
             tags: ['Event', 'Culture', 'Identity', 'Social', 'Informational'],
-            image: 'src/assets/Business Cards Mockup, Stacked  (2).png'
+            image: businessCard2
         },
         {
             id: 13,
@@ -171,7 +184,7 @@ export const ProjectsProvider = ({ children }) => {
                 es: 'Materiales de información y promoción para campañas de diversidad, género e inclusión.'
             },
             tags: ['Event', 'Culture', 'Identity', 'Social', 'Informational'],
-            image: 'src/assets/Business Cards Mockup, Stacked .png'
+            image: businessCardStacked
         }
     ];
 

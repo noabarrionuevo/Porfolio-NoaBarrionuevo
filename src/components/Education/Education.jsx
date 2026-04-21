@@ -22,22 +22,27 @@ function Education() {
                 en: "Front End Developer & Diploma in Web UX/UI Development | 2025",
                 es: "Desarrolladora Front End y Diplomatura en Desarrollo Web UX/UI | 2025"
             }
+        },
+        {
+            institution: "Escuela Secundaria Polivalente",
+            degree: {
+                en: "Bachelor in Visual Arts (Specialization in Printmaking) | 2017 – 2022",
+                es: "Bachiller en Artes Visuales (Especialización en Grabado) | 2017 – 2022"
+            }
         }
     ];
 
     return (
-        <section id="education" className="section education">
+        <section id="EDUCATION" className="section education">
             <div className="container">
                 <div className="section-title-boxed">
-                    <span className="box">e</span>
-                    <span className="box">d</span>
-                    <span className="box">u</span>
-                    <span className="box">c</span>
-                    <span className="box">a</span>
-                    <span className="box">t</span>
-                    <span className="box">i</span>
-                    <span className="box">o</span>
-                    <span className="box">n</span>
+                    {t({ en: 'Education', es: 'Educación' }).split('').map((char, index) => (
+                        char === ' ' ? (
+                            <span key={index} className="box-space"></span>
+                        ) : (
+                            <span key={index} className="box">{char.toLowerCase()}</span>
+                        )
+                    ))}
                 </div>
 
                 <div className="education-list">

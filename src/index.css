@@ -240,6 +240,33 @@ a:hover {
   background-clip: text;
 }
 
+/* Boxed Section Titles */
+.section-title-boxed {
+  display: flex;
+  gap: 5px;
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.section-title-boxed .box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 45px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-family-headings);
+  font-size: 1.5rem;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.box-space {
+  width: 15px;
+}
+
 /* Button Styles */
 .btn {
   display: inline-flex;

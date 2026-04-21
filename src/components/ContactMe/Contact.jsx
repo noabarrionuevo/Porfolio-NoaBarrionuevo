@@ -92,28 +92,16 @@ function Contact() {
     };
 
     return (
-        <section id="contact" className="section contact">
+        <section id="CONTACT" className="section contact">
             <div className="container contact-container">
                 <div className="section-title-boxed">
-                    <span className="box">c</span>
-                    <span className="box">o</span>
-                    <span className="box">n</span>
-                    <span className="box">t</span>
-                    <span className="box">a</span>
-                    <span className="box">c</span>
-                    <span className="box">t</span>
-                    <span className="box-space"></span>
-                    <span className="box">i</span>
-                    <span className="box">n</span>
-                    <span className="box">f</span>
-                    <span className="box">o</span>
-                    <span className="box">r</span>
-                    <span className="box">m</span>
-                    <span className="box">a</span>
-                    <span className="box">t</span>
-                    <span className="box">i</span>
-                    <span className="box">o</span>
-                    <span className="box">n</span>
+                    {t({ en: 'Contact', es: 'Contacto' }).split('').map((char, index) => (
+                        char === ' ' ? (
+                            <span key={index} className="box-space"></span>
+                        ) : (
+                            <span key={index} className="box">{char.toLowerCase()}</span>
+                        )
+                    ))}
                 </div>
 
 

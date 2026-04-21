@@ -29,15 +29,16 @@ function Skills() {
     ];
 
     return (
-        <section id="skills" className="section skills">
+        <section id="SKILLS" className="section skills">
             <div className="container">
                 <div className="section-title-boxed">
-                    <span className="box">s</span>
-                    <span className="box">k</span>
-                    <span className="box">i</span>
-                    <span className="box">l</span>
-                    <span className="box">l</span>
-                    <span className="box">s</span>
+                    {t({ en: 'Skills', es: 'Habilidades' }).split('').map((char, index) => (
+                        char === ' ' ? (
+                            <span key={index} className="box-space"></span>
+                        ) : (
+                            <span key={index} className="box">{char.toLowerCase()}</span>
+                        )
+                    ))}
                 </div>
 
                 <div className="skills-layout-container">

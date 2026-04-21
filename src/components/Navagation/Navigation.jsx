@@ -14,24 +14,35 @@ function Navigation() {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false); // Close menu after clicking a link
+      setIsMenuOpen(false);
     }
   };
 
   return (
-    <nav className="navigation glass">
+    <nav className="navigation">
       <div className="nav-container">
-        <span className="nav-bracket" onClick={toggleMenu}>&lt;</span>
+        {/* Desktop View Brackets (Hidden on mobile) */}
+        <span className="nav-bracket desktop-only">&lt;</span>
+        
+        {/* Mobile Toggle Button */}
+        <button className="nav-toggle mobile-only" onClick={toggleMenu}>
+          <span className="bracket-icon">&lt;</span>
+          <span className="toggle-text">{isMenuOpen ? t({ en: 'CLOSE', es: 'CERRAR' }) : t({ en: 'MENU', es: 'MENÚ' })}</span>
+          <span className="bracket-icon">/&gt;</span>
+        </button>
+
         <ul className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
-          <li><a onClick={() => scrollToSection('home')}>{t({ en: 'Home', es: 'Inicio' })}</a></li>
-          <li><a onClick={() => scrollToSection('about')}>{t({ en: 'About', es: 'Sobre Mí' })}</a></li>
-          <li><a onClick={() => scrollToSection('skills')}>{t({ en: 'Skills', es: 'Habilidades' })}</a></li>
-          <li><a onClick={() => scrollToSection('experience')}>{t({ en: 'Experience', es: 'Experiencia' })}</a></li>
-          <li><a onClick={() => scrollToSection('education')}>{t({ en: 'Education', es: 'Educación' })}</a></li>
-          <li><a onClick={() => scrollToSection('projects')}>{t({ en: 'Projects', es: 'Proyectos' })}</a></li>
-          <li><a onClick={() => scrollToSection('contact')}>{t({ en: 'Contact', es: 'Contacto' })}</a></li>
+          <li><a onClick={() => scrollToSection('HOME')}>{t({ en: 'Home', es: 'Inicio' })}</a></li>
+          <li><a onClick={() => scrollToSection('ABOUT')}>{t({ en: 'About', es: 'Sobre Mí' })}</a></li>
+          <li><a onClick={() => scrollToSection('SKILLS')}>{t({ en: 'Skills', es: 'Habilidades' })}</a></li>
+          <li><a onClick={() => scrollToSection('SERVICES')}>{t({ en: 'Services', es: 'Servicios' })}</a></li>
+          <li><a onClick={() => scrollToSection('EXPERIENCE')}>{t({ en: 'Experience', es: 'Experiencia' })}</a></li>
+          <li><a onClick={() => scrollToSection('EDUCATION')}>{t({ en: 'Education', es: 'Educación' })}</a></li>
+          <li><a onClick={() => scrollToSection('PROJECTS')}>{t({ en: 'Projects', es: 'Proyectos' })}</a></li>
+          <li><a onClick={() => scrollToSection('CONTACT')}>{t({ en: 'Contact', es: 'Contacto' })}</a></li>
         </ul>
-        <span className="nav-bracket" onClick={toggleMenu}>/&gt;</span>
+
+        <span className="nav-bracket desktop-only">/&gt;</span>
       </div>
     </nav>
   );

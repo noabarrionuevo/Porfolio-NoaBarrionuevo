@@ -18,12 +18,12 @@ function Hero() {
     };
 
     return (
-        <section id="home" className="hero">
+        <section id="HOME" className="hero">
             <div className="hero-content container">
                 <div className="hero-text animate-fadeIn">
                     <div className="name-header">
-                        <span className="name-noa">noa</span>
-                        <span className="name-barrionuevo">barrionuevo</span>
+                        <span className="name-noa">Noa</span>
+                        <span className="name-barrionuevo">Barrionuevo</span>
                     </div>
                     <h1 className="hero-title-boxed">
                         <span className="box">P</span>

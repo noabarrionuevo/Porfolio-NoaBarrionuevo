@@ -9,7 +9,7 @@ function About() {
     const contactInfo = useContact();
 
     return (
-        <section id="about" className="section about">
+        <section id="ABOUT" className="section about">
             <div className="container about-container">
                 <div className="about-image-decoration animate-fadeIn">
                     <div className="profile-picture-box">
@@ -19,14 +19,13 @@ function About() {
 
                 <div className="about-content-box animate-fadeInUp">
                     <div className="section-title-boxed">
-                        <span className="box">a</span>
-                        <span className="box">b</span>
-                        <span className="box">o</span>
-                        <span className="box">u</span>
-                        <span className="box">t</span>
-                        <span className="box-space"></span>
-                        <span className="box">m</span>
-                        <span className="box">e</span>
+                        {t({ en: 'About Me', es: 'Sobre Mí' }).split('').map((char, index) => (
+                            char === ' ' ? (
+                                <span key={index} className="box-space"></span>
+                            ) : (
+                                <span key={index} className="box">{char.toLowerCase()}</span>
+                            )
+                        ))}
                     </div>
 
                     <div className="about-text-content">

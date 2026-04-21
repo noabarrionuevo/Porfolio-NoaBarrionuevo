@@ -3,11 +3,6 @@
   padding: var(--spacing-4xl) 0;
 }
 
-.contact-container {
-  max-width: 800px;
-}
-
-
 
 .contact-form {
   margin-top: var(--spacing-4xl);

@@ -61,19 +61,16 @@ function Experience() {
     ];
 
     return (
-        <section id="experience" className="section experience">
+        <section id="EXPERIENCE" className="section experience">
             <div className="container">
                 <div className="section-title-boxed">
-                    <span className="box">e</span>
-                    <span className="box">x</span>
-                    <span className="box">p</span>
-                    <span className="box">e</span>
-                    <span className="box">r</span>
-                    <span className="box">i</span>
-                    <span className="box">e</span>
-                    <span className="box">n</span>
-                    <span className="box">c</span>
-                    <span className="box">e</span>
+                    {t({ en: 'Experience', es: 'Experiencia' }).split('').map((char, index) => (
+                        char === ' ' ? (
+                            <span key={index} className="box-space"></span>
+                        ) : (
+                            <span key={index} className="box">{char.toLowerCase()}</span>
+                        )
+                    ))}
                 </div>
 
                 <div className="experience-list">

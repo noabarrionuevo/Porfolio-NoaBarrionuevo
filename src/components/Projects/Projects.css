@@ -6,8 +6,9 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-3xl);
+  gap: var(--spacing-4xl);
   margin-top: var(--spacing-3xl);
+  align-items: start;
 }
 
 .project-card {
@@ -19,15 +20,57 @@
 
 
 
-.project-img {
+.project-image-container {
   width: 100%;
-  height: 50%;
-  object-fit: cover;
-  transition: transform 0.3s;
+  height: 250px;
+  overflow: hidden;
+  border: 2px solid var(--color-primary);
+  background-color: #fff;
+  position: relative;
+  cursor: zoom-in;
+  box-shadow: 4px 4px 0px rgba(107, 15, 15, 0.1);
+  margin-bottom: var(--spacing-sm);
+  transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-img {
-  transform: scale(1.05);
+.project-image-container:hover {
+  transform: translateY(-5px) rotate(1deg);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-image-container:hover .project-img {
+  transform: scale(1.1);
+}
+
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(107, 15, 15, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-image-overlay span {
+  color: #fff;
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-lg);
+  text-transform: uppercase;
+}
+
+.project-image-container:hover .project-image-overlay {
+  opacity: 1;
 }
 
 .project-title {
@@ -71,6 +114,47 @@
   color: #fff;
 }
 
+/* Featured Web Projects Style */
+.project-card-featured {
+  background-color: #fff;
+  padding: var(--spacing-2xl);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    5px 5px 0px rgba(107, 15, 15, 0.05);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-card-featured:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.project-card-featured:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.project-card-featured:hover {
+  transform: rotate(0deg) translateY(-10px);
+  z-index: 10;
+}
+
+.project-card-featured .project-title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.project-card-featured .project-description {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -78,17 +162,20 @@
 }
 
 .design-carousel-section {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-4xl);
+  text-align: center;
 }
+
 
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   padding: var(--spacing-xl);
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
+  min-height: 400px;
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -99,45 +186,96 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--spacing-md);
+}
+
+.carousel-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: var(--spacing-lg);
 }
 
 .carousel-image-wrapper {
   width: 100%;
-  max-width: 600px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.carousel-image-wrapper:hover {
-  transform: scale(1.02);
+  max-width: 500px;
+  height: 350px;
+  cursor: zoom-in;
+  position: relative;
+  overflow: hidden;
 }
 
 .carousel-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  background-color: transparent;
 }
 
-.carousel-image-title {
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(107, 15, 15, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-image-wrapper:hover .carousel-overlay {
+  opacity: 1;
+}
+
+.carousel-overlay span {
+  color: transparent;
+  font-family: var(--font-family-headings);
+  text-transform: uppercase;
+}
+
+.carousel-text {
+  max-width: 600px;
+}
+
+.carousel-project-title {
   font-family: var(--font-family-headings);
   font-size: var(--font-size-xl);
-  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.carousel-project-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.carousel-project-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
 }
 
 .carousel-btn {
   background: var(--color-primary);
   color: #fff;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 4px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: var(--font-family-headings);
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-  z-index: 5;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-btn:hover {
@@ -148,17 +286,16 @@
 @media (max-width: 768px) {
   .carousel-container {
     padding: var(--spacing-md);
-    gap: var(--spacing-md);
-  }
-
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+    gap: var(--spacing-sm);
   }
 
   .carousel-image-wrapper {
-    padding: 10px 10px 30px 10px;
+    height: 250px;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -188,7 +325,7 @@
   max-width: 100%;
   max-height: 90vh;
   object-fit: contain;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 

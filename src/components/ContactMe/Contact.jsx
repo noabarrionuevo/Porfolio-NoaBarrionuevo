@@ -2,6 +2,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useLanguage } from '../../context/LanguageContext';
 import { useContact } from '../../context/ContactContext';
+import { FaEnvelope, FaGithub, FaLinkedin, FaInstagram, FaLink } from 'react-icons/fa';
 import './Contact.css';
 
 function Contact() {
@@ -115,76 +116,64 @@ function Contact() {
                     <span className="box">n</span>
                 </div>
 
-                <div className="contact-info-list animate-fadeInUp">
-                    <div className="contact-detail-item">
-                        <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+
+
+                <form className="contact-form glass animate-fadeInUp" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">{t({ en: 'Name', es: 'Nombre' })}</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            placeholder={t({ en: 'Your name', es: 'Tu nombre' })}
+                        />
                     </div>
-                    {contactInfo.socialLinks.map((link, index) => (
-                        <div key={index} className="contact-detail-item">
-                            <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                {link.url.replace('https://', '').replace('www.', '')}
-                                {link.name === 'Instagram' ? ` (@tangivisu)` : ''}
-                            </a>
+
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            placeholder={t({ en: 'your.email@example.com', es: 'tu.email@ejemplo.com' })}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="message">{t({ en: 'Message', es: 'Mensaje' })}</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            rows="5"
+                            placeholder={t({ en: 'Your message...', es: 'Tu mensaje...' })}
+                        ></textarea>
+                    </div>
+
+                    {submitStatus.message && (
+                        <div className={`form-status ${submitStatus.type}`}>
+                            {submitStatus.message}
                         </div>
-                    ))}
-                </div>
+                    )}
 
-                    <form className="contact-form glass animate-fadeInUp" onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="name">{t({ en: 'Name', es: 'Nombre' })}</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                                placeholder={t({ en: 'Your name', es: 'Tu nombre' })}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                                placeholder={t({ en: 'your.email@example.com', es: 'tu.email@ejemplo.com' })}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="message">{t({ en: 'Message', es: 'Mensaje' })}</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                                rows="5"
-                                placeholder={t({ en: 'Your message...', es: 'Tu mensaje...' })}
-                            ></textarea>
-                        </div>
-
-                        {submitStatus.message && (
-                            <div className={`form-status ${submitStatus.type}`}>
-                                {submitStatus.message}
-                            </div>
-                        )}
-
-                        <button
-                            type="submit"
-                            className="btn btn-primary"
-                            disabled={isSubmitting}
-                        >
-                            {isSubmitting ? t({ en: 'Sending...', es: 'Enviando...' }) : t({ en: 'Send Message', es: 'Enviar Mensaje' })}
-                        </button>
-                    </form>
-                </div>
-            </section>
+                    <button
+                        type="submit"
+                        className="btn btn-primary"
+                        disabled={isSubmitting}
+                    >
+                        {isSubmitting ? t({ en: 'Sending...', es: 'Enviando...' }) : t({ en: 'Send Message', es: 'Enviar Mensaje' })}
+                    </button>
+                </form>
+            </div>
+        </section>
     );
 }
 

@@ -1,5 +1,10 @@
 import { useLanguage } from '../../context/LanguageContext';
 import './Skills.css';
+import { FiFigma } from "react-icons/fi";
+import { DiIllustrator, DiPhotoshop } from "react-icons/di";
+import { VscVscode } from "react-icons/vsc";
+import { FaGitAlt, FaGithub } from "react-icons/fa";
+import { TbBrandOffice } from "react-icons/tb";
 
 function Skills() {
     const { t } = useLanguage();
@@ -35,53 +40,55 @@ function Skills() {
                     <span className="box">s</span>
                 </div>
 
-                <div className="skills-content-descriptive">
-                    <div className="skill-item-descriptive">
-                        <strong>{t({ en: 'Front-End Development: ', es: 'Desarrollo Front-End: ' })}</strong>
-                        {t({
-                            en: "HTML5, CSS3, JavaScript (ES6+), React.js, and Git/GitHub. Familiar with Responsive Design, CSS Flexbox/Grid, and currently expanding knowledge in TypeScript and Next.js.",
-                            es: "HTML5, CSS3, JavaScript (ES6+), React.js y Git/GitHub. Familiarizada con Diseño Responsivo, CSS Flexbox/Grid, y actualmente expandiendo conocimientos en TypeScript y Next.js."
-                        })}
+                <div className="skills-layout-container">
+                    <div className="skills-content-descriptive">
+                        <div className="skill-item-descriptive">
+                            <strong>{t({ en: 'Front-End Development: ', es: 'Desarrollo Front-End: ' })}</strong>
+                            {t({
+                                en: "HTML5, CSS3, JavaScript (ES6+), React.js, and Git/GitHub. Familiar with Responsive Design, CSS Flexbox/Grid, and currently expanding knowledge in TypeScript and Next.js.",
+                                es: "HTML5, CSS3, JavaScript (ES6+), React.js y Git/GitHub. Familiarizada con Diseño Responsivo, CSS Flexbox/Grid, y actualmente expandiendo conocimientos en TypeScript y Next.js."
+                            })}
+                        </div>
+                        <div className="skill-item-descriptive">
+                            <strong>{t({ en: 'UI/UX Design: ', es: 'Diseño UI/UX: ' })}</strong>
+                            {t({
+                                en: "User-Centered Design (UCD), Wireframing, High-Fidelity Prototyping in Figma, Design Systems, and Information Architecture.",
+                                es: "Diseño Centrado en el Usuario (UCD), Wireframing, Prototipado de Alta Fidelidad en Figma, Sistemas de Diseño y Arquitectura de la Información."
+                            })}
+                        </div>
+                        <div className="skill-item-descriptive">
+                            <strong>{t({ en: 'Design Tools: ', es: 'Herramientas de Diseño: ' })}</strong>
+                            {t({
+                                en: "Proficiency in Adobe Illustrator and Photoshop (self-taught), focused on the creation of digital assets, photo retouching, and vector design.",
+                                es: "Competencia en Adobe Illustrator y Photoshop (autodidacta), enfocada en la creación de activos digitales, retoque fotográfico y diseño vectorial."
+                            })}
+                        </div>
+                        <div className="skill-item-descriptive">
+                            <strong>{t({ en: 'Design & Visual Arts: ', es: 'Diseño y Artes Visuales: ' })}</strong>
+                            {t({
+                                en: "Expertise in color theory, composition, and typography from a Bachelor's in Visual Arts. Experience in Printmaking and Printed Art applied to digital branding.",
+                                es: "Experiencia en teoría del color, composición y tipografía por una Licenciatura en Artes Visuales. Experiencia en Grabado y Arte Impreso aplicado al branding digital."
+                            })}
+                        </div>
+                        <div className="skill-item-descriptive">
+                            <strong>{t({ en: 'E-commerce & Management: ', es: 'E-commerce y Gestión: ' })}</strong>
+                            {t({
+                                en: "Online store administration, stock control, and digital sales strategy. Proficient in managing Social Media and visual content creation for brand growth.",
+                                es: "Administración de tiendas online, control de stock y estrategia de ventas digitales. Competente en gestión de Redes Sociales y creación de contenido visual para el crecimiento de marca."
+                            })}
+                        </div>
                     </div>
-                    <div className="skill-item-descriptive">
-                        <strong>{t({ en: 'UI/UX Design: ', es: 'Diseño UI/UX: ' })}</strong>
-                        {t({
-                            en: "User-Centered Design (UCD), Wireframing, High-Fidelity Prototyping in Figma, Design Systems, and Information Architecture.",
-                            es: "Diseño Centrado en el Usuario (UCD), Wireframing, Prototipado de Alta Fidelidad en Figma, Sistemas de Diseño y Arquitectura de la Información."
-                        })}
-                    </div>
-                    <div className="skill-item-descriptive">
-                        <strong>{t({ en: 'Design Tools: ', es: 'Herramientas de Diseño: ' })}</strong>
-                        {t({
-                            en: "Proficiency in Adobe Illustrator and Photoshop (self-taught), focused on the creation of digital assets, photo retouching, and vector design.",
-                            es: "Competencia en Adobe Illustrator y Photoshop (autodidacta), enfocada en la creación de activos digitales, retoque fotográfico y diseño vectorial."
-                        })}
-                    </div>
-                    <div className="skill-item-descriptive">
-                        <strong>{t({ en: 'Design & Visual Arts: ', es: 'Diseño y Artes Visuales: ' })}</strong>
-                        {t({
-                            en: "Expertise in color theory, composition, and typography from a Bachelor's in Visual Arts. Experience in Printmaking and Printed Art applied to digital branding.",
-                            es: "Experiencia en teoría del color, composición y tipografía por una Licenciatura en Artes Visuales. Experiencia en Grabado y Arte Impreso aplicado al branding digital."
-                        })}
-                    </div>
-                    <div className="skill-item-descriptive">
-                        <strong>{t({ en: 'E-commerce & Management: ', es: 'E-commerce y Gestión: ' })}</strong>
-                        {t({
-                            en: "Online store administration, stock control, and digital sales strategy. Proficient in managing Social Media and visual content creation for brand growth.",
-                            es: "Administración de tiendas online, control de stock y estrategia de ventas digitales. Competente en gestión de Redes Sociales y creación de contenido visual para el crecimiento de marca."
-                        })}
-                    </div>
-                </div>
 
-                <div className="software-icons-box animate-fadeIn">
-                    <div className="icons-container">
-                        {/* Mock icons - replace with actual SVGs or components */}
-                        <div className="icon-sticker">Figma</div>
-                        <div className="icon-sticker">Ai</div>
-                        <div className="icon-sticker">Ps</div>
-                        <div className="icon-sticker">VS</div>
-                        <div className="icon-sticker">Git</div>
-                        <div className="icon-sticker">365</div>
+                    <div className="software-icons-box animate-fadeIn">
+                        <div className="icons-container">
+                            <div className="icon-sticker" title="Figma"><FiFigma /> <span>Figma</span></div>
+                            <div className="icon-sticker" title="Illustrator"><DiIllustrator /> <span>Ai</span></div>
+                            <div className="icon-sticker" title="Photoshop"><DiPhotoshop /> <span>Ps</span></div>
+                            <div className="icon-sticker" title="VS Code"><VscVscode /> <span>VS Code</span></div>
+                            <div className="icon-sticker" title="Git"><FaGitAlt /> <span>Git</span></div>
+                            <div className="icon-sticker" title="GitHub"><FaGithub /> <span>GitHub</span></div>
+                            <div className="icon-sticker" title="Office 365"><TbBrandOffice /> <span>Office 365</span></div>
+                        </div>
                     </div>
                 </div>
             </div>

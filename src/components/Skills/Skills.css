@@ -3,12 +3,19 @@
   padding: var(--spacing-4xl) 0;
 }
 
+.skills-layout-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-4xl);
+  align-items: flex-start;
+  margin-top: var(--spacing-2xl);
+}
+
 .skills-content-descriptive {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-  max-width: 800px;
-  margin-top: var(--spacing-2xl);
+  flex: 1;
 }
 
 .skill-item-descriptive {
@@ -23,23 +30,12 @@
 }
 
 .software-icons-box {
-  margin-top: var(--spacing-4xl);
-  border: 2px solid var(--color-primary);
   padding: var(--spacing-md);
   position: relative;
-  max-width: 400px;
+  flex-basis: 250px;
+  flex-shrink: 0;
 }
 
-.software-icons-box::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border: 1px solid var(--color-primary);
-  pointer-events: none;
-}
 
 .icons-container {
   display: flex;
@@ -51,21 +47,41 @@
 
 .icon-sticker {
   font-family: var(--font-family-headings);
-  font-size: 1.2rem;
+  font-size: 2rem;
   background-color: var(--color-primary);
   color: #fff;
-  padding: 5px 10px;
+  padding: 8px 15px;
   border-radius: 4px;
-  box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
   transform: rotate(-2deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.icon-sticker span {
+  font-size: 1.2rem;
+  font-weight: normal;
 }
 
 .icon-sticker:nth-child(even) {
   transform: rotate(2deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .skills-layout-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .skills-content-descriptive {
     text-align: center;
+  }
+
+  .software-icons-box {
+    width: 100%;
+    max-width: 400px;
+    margin-top: var(--spacing-2xl);
   }
 }

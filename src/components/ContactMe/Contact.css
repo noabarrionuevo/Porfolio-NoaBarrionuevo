@@ -7,24 +7,7 @@
   max-width: 800px;
 }
 
-.contact-info-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-xl);
-}
 
-.contact-detail-item a {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-primary);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  transition: color 0.2s;
-}
-
-.contact-detail-item a:hover {
-  color: var(--color-primary-light);
-}
 
 .contact-form {
   margin-top: var(--spacing-4xl);
@@ -76,10 +59,4 @@
   background-color: #fee2e2;
   color: #991b1b;
   border: 2px solid #991b1b;
-}
-
-@media (max-width: 768px) {
-  .contact-info-list {
-    text-align: center;
-  }
 }

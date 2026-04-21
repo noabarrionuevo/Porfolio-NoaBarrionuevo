@@ -2,7 +2,6 @@ import { useLanguage } from '../../context/LanguageContext';
 import './Hero.css';
 
 function Hero() {
-    const { language, toggleLanguage, t } = useLanguage();
 
     const scrollToContact = () => {
         const element = document.getElementById('contact');
@@ -44,11 +43,6 @@ function Hero() {
                         <span className="role">developer</span>
                     </div>
                 </div>
-            </div>
-            <div className="language-toggle-floating">
-                <button className="language-btn" onClick={toggleLanguage}>
-                    {language === 'en' ? 'ES' : 'EN'}
-                </button>
             </div>
         </section>
     );

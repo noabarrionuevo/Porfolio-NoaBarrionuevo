@@ -286,7 +286,9 @@
 @media (max-width: 768px) {
   .carousel-container {
     padding: var(--spacing-md);
-    gap: var(--spacing-sm);
+    gap: 0;
+    position: relative;
+    min-height: auto;
   }
 
   .carousel-image-wrapper {
@@ -294,8 +296,30 @@
   }
 
   .carousel-btn {
-    width: 35px;
-    height: 35px;
+    position: absolute;
+    top: 141px; /* padding-top (16px) + half of image height (125px) */
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 2.5rem;
+    background: transparent;
+    color: var(--color-primary-dark);
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .carousel-btn:hover {
+    background: transparent;
+    color: var(--color-primary);
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  .carousel-btn.prev {
+    left: 0;
+  }
+
+  .carousel-btn.next {
+    right: 0;
   }
 }
 

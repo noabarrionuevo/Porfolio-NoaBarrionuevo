@@ -14,8 +14,6 @@ function About() {
                 <div className="about-image-decoration animate-fadeIn">
                     <div className="profile-picture-box">
                         <img src={profilePic} alt="profile picture" className="profile-photo" />
-                        <div className="badge-name">noa barrionuevo</div>
-                        <div className="badge-origin">based in argentina</div>
                     </div>
                 </div>
 

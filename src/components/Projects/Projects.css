@@ -1,13 +1,13 @@
 .projects {
-  background-color: var(--color-bg-primary);
+  background-color: transparent;
   padding: var(--spacing-4xl) 0;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-3xl);
-  margin-top: var(--spacing-4xl);
+  margin-top: var(--spacing-3xl);
 }
 
 .project-card {
@@ -17,19 +17,11 @@
   text-align: center;
 }
 
-.project-image-box {
-  width: 100%;
-  aspect-ratio: 4/5;
-  background-color: #eee;
-  border: 2px solid var(--color-primary);
-  overflow: hidden;
-  margin-bottom: var(--spacing-sm);
-  box-shadow: var(--shadow-md);
-}
+
 
 .project-img {
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: cover;
   transition: transform 0.3s;
 }
@@ -83,4 +75,136 @@
   .projects-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.design-carousel-section {
+  margin-top: var(--spacing-xl);
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.carousel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.carousel-image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-image-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-image-title {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.carousel-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-family: var(--font-family-headings);
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.carousel-btn:hover {
+  background: var(--color-primary-light);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-image-wrapper {
+    padding: 10px 10px 30px 10px;
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: zoom-out;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
 }
